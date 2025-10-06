@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: application-from-scratch
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    helm:
+      releaseName: application-from-helm
+      parameters:
+        - name: "replicaCount"
+          value: "3"
+    path: helm/nginx
+    repoURL: https://github.com/JoelChandanshiv/argocd.git
+    targetRevision: main
