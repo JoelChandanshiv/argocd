@@ -1,0 +1,10 @@
+username              = "admin"
+password              = "NRBS5tgbDnEItvJi"
+server_addr           = "localhost:8085"
+namespace             = "argocd"
+repo_url              = "https://github.com/JoelChandanshiv/argocd.git"
+path                  = "helm/nginx"
+target_revision       = "main"
+destination_namespace = "terraform1"
+destination_server    = "https://kubernetes.default.svc"
+insecure              = true
